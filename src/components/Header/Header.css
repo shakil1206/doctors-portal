@@ -1,0 +1,60 @@
+
+.banner{
+    height: 800px;
+    background-image: url('../../images/Mask\ Group\ 2.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+.top-background{
+    background-color: #253447;
+    height: 800px;
+    width: 30%;
+    position: absolute;
+    right: 0;
+}
+nav{
+    margin-top: 30px;
+   
+}
+
+nav a{
+    text-decoration: none;
+    color: gray;
+    margin-right: 30px;
+    font-weight: 600;
+    font-size: large;
+    padding: 20px 0;
+}
+nav a:hover{
+    text-decoration: none;
+    color: lightgray;
+}
+
+.left-side{
+    margin-top: 200px;
+}
+
+.right-img img{
+    width: 600px;
+    margin-top: 200px;
+}
+
+.left-button{
+    background-image: linear-gradient(to left, #18d3b2 0%, #10d0e7 100%);
+}
+
+.circle{
+    color:green;
+    text-align: center;
+
+}
+
+.btn{
+    height: 50px;
+    width: 80px;
+}
+
+.btn-icon{
+    font-size: 40px;
+}

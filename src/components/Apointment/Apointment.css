@@ -1,0 +1,17 @@
+.cardStyle {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.cardStyle h4{
+    color:#1cc7c8;
+}
+
+.buttonStyle{
+    text-align: center;
+}
+
+.buttonStyle Button{
+    background-image: linear-gradient(to left, #18d3b2 0%, #10d0e7 100%);
+}
