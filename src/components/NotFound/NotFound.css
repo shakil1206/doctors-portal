@@ -1,0 +1,20 @@
+.not-found{    
+    background-image: linear-gradient(to left, #18d3b2 0%, #10d0e7 100%);
+    color: white;
+    height: 250px;
+    width: 500px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;    
+    
+}
+
+.not-found Button{
+    width: 200px;
+}

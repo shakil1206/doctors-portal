@@ -31,16 +31,20 @@ const Header = () => {
         email: '',
         gender: '',
         age: '',
-        weight: ''
+        weight: '',
+        Action:"Pending",
+        isVisited:false,
+        time:''
     })
 
     const [modalOpen, setModalOpen] = useState(false);
     const [modal2isOpen, setModal2isOpen] = useState(false);
 
 
-    const handleModalOpen = (title) => {
+    const handleModalOpen = (title, time) => {
         setModalOpen(true);
         patientDetails.title = title;
+        patientDetails.time = time;
         const dayName = (calenderDate.toString()).split(" ")[0];
         const month = (calenderDate.toString()).split(" ")[1];
         const day = (calenderDate.toString()).split(" ")[2];
@@ -101,6 +105,7 @@ const Header = () => {
         patientDetails.gender = data.gender;
         patientDetails.age = data.age;
         patientDetails.weight = data.weight;
+        
 
         fetch('http://localhost:4200/patient', {
             method: 'POST',
@@ -129,12 +134,12 @@ const Header = () => {
                     <div className="row">
                         <div className="col-md-12 d-flex justify-content-end">
                             <nav>
-                                <a href="#home">Home</a>
-                                <a href="#about">About</a>
-                                <a href="#dentalservices">Dental Services</a>
-                                <a href="#reviews">Reviews</a>
-                                <a href="#Blog">Blog</a>
-                                <a href="#dashboard">Dashboard</a>
+                                <a href="/home">Home</a>
+                                <a href="/about">About</a>
+                                <a href="/dentalservices">Dental Services</a>
+                                <a href="/reviews">Reviews</a>
+                                <a href="/Blog">Blog</a>
+                                <a href="/dashboard">Dashboard</a>
                             </nav>
                         </div>
                     </div>

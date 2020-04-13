@@ -1,0 +1,25 @@
+.button-margin{
+    margin-bottom: 10px;
+}
+
+.selector{
+    position: relative;
+}
+
+.recent-color{
+    color: #18d2df;
+}
+
+.action-btn-style{
+    width: 125px;
+    height: 35px;
+}
+
+td{
+    text-align: center;
+}
+
+.row-bottom-style{
+    border-bottom: 2px solid lightgray;
+}
+

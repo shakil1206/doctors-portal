@@ -47,7 +47,7 @@ const Apointment = (props) => {
                     </Typography>
                 </CardContent>
                 <CardActions className="buttonStyle d-flex justify-content-center" >
-                    <Button onClick={() => props.handleModalOpen(title)} variant="contained" color="primary">Book Appointment</Button>
+                    <Button onClick={() => props.handleModalOpen(title,time)} variant="contained" color="primary">Book Appointment</Button>
                 </CardActions>
             </Card>
 
