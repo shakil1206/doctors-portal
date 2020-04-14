@@ -45,12 +45,11 @@ const Header = () => {
         setModalOpen(true);
         patientDetails.title = title;
         patientDetails.time = time;
-        const dayName = (calenderDate.toString()).split(" ")[0];
         const month = (calenderDate.toString()).split(" ")[1];
         const day = (calenderDate.toString()).split(" ")[2];
         const year = (calenderDate.toString()).split(" ")[3];
 
-        patientDetails.date = dayName + " " + month + " " + day + ", " + year;
+        patientDetails.date = month + "-" + day + "-" + year;
 
     }
 
@@ -66,7 +65,7 @@ const Header = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:4200/apointment')
+        fetch('https://warm-eyrie-65386.herokuapp.com/apointment')
             .then(res => res.json())
             .then(data => {
                 setApointmentDetails(data);
@@ -107,7 +106,7 @@ const Header = () => {
         patientDetails.weight = data.weight;
         
 
-        fetch('http://localhost:4200/patient', {
+        fetch('https://warm-eyrie-65386.herokuapp.com/patient', {
             method: 'POST',
             body: JSON.stringify(patientDetails),
             headers: {

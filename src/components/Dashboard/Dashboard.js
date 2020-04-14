@@ -40,27 +40,40 @@ const Dashboard = () => {
 
   const [calenderDate, setCalenderDate] = useState(new Date());
 
-  const handleCalender = date => {
-    setCalenderDate(date);
-
-  }
-
-
   const [allPatient, setAllPatient] = useState([]);
+
   let SlNo = 1;
   let SlNo2 = 1;
   let SlNo3 = 1;
 
-
   useEffect(() => {
 
-    fetch('http://localhost:4200/allPatient')
+    fetch('https://warm-eyrie-65386.herokuapp.com/allPatient')
       .then(res => res.json())
       .then(data => {
         setAllPatient(data);
       })
 
   }, [])
+
+
+  const handleCalender = date => {
+    setCalenderDate(date);
+    const month = (calenderDate.toString()).split(" ")[1];
+    const day = (calenderDate.toString()).split(" ")[2];
+    const year = (calenderDate.toString()).split(" ")[3];
+
+   
+  }
+
+
+const handleAction =(event)=>{
+  console.log(event.target.value);
+}
+
+const handleGetId=(id)=>{
+  console.log(id)
+}
 
   const drawerWidth = 240;
 
@@ -350,10 +363,10 @@ const Dashboard = () => {
                             <button className="btn btn-primary action-btn-style">View</button>
                           </td>
                           <td>
-                            <select className="btn btn-info action-btn-style" name="" id="">
-                              <option className="bg-white text-secondary" value="">Pending</option>
-                              <option className="bg-white text-secondary" value="">Approved</option>
-                              <option className="bg-white text-secondary" value="">Rejected</option>
+                            <select className="btn btn-info action-btn-style" onChange={handleAction}  name="" id="">
+                              <option className="bg-white text-secondary" onChange={handleGetId(patient._id)} value="Pending">Pending</option>
+                              <option className="bg-white text-secondary" onChange={handleGetId(patient._id)} value="Approved">Approved</option>
+                              <option className="bg-white text-secondary" onChange={handleGetId(patient._id)} value="Rejected">Rejected</option>
                             </select>
                           </td>
                         </tr>)
@@ -392,6 +405,7 @@ const Dashboard = () => {
                       </tr>
                     </thead>
                     <tbody>
+
                       <tr className="text-center">
                         <td>Shakil Ahmed</td>
                         <td>10-04-2020</td>
@@ -529,7 +543,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        
+
       </main>
     </div >
   );
