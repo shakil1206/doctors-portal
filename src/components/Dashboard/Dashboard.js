@@ -26,6 +26,10 @@ import DateRangeIcon from '@material-ui/icons/DateRange';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { Link } from "react-router-dom";
+import PatientByDate from '../PatientByDate/PatientByDate';
+import Patient from '../Patient/Patient';
+import RecentApointment from '../RecentApointment/RecentApointment';
+import Prescription from '../Prescription/Prescription';
 
 
 
@@ -41,6 +45,9 @@ const Dashboard = () => {
   const [calenderDate, setCalenderDate] = useState(new Date());
 
   const [allPatient, setAllPatient] = useState([]);
+
+
+  const [patientByDate, setPatientByDate] = useState([]);
 
   let SlNo = 1;
   let SlNo2 = 1;
@@ -59,21 +66,24 @@ const Dashboard = () => {
 
   const handleCalender = date => {
     setCalenderDate(date);
-    const month = (calenderDate.toString()).split(" ")[1];
-    const day = (calenderDate.toString()).split(" ")[2];
-    const year = (calenderDate.toString()).split(" ")[3];
+    let month = (calenderDate.toString()).split(" ")[1];
+    let day = (calenderDate.toString()).split(" ")[2];
+    let year = (calenderDate.toString()).split(" ")[3];
 
-   
+
+    const patient = allPatient.filter(pat => pat.date === (month + "-" + day + "-" + year));
+    setPatientByDate([]);
+    setPatientByDate(patient);
   }
 
 
-const handleAction =(event)=>{
-  console.log(event.target.value);
-}
 
-const handleGetId=(id)=>{
-  console.log(id)
-}
+
+  const handleAction = (event) => {
+    console.log(event.target.value);
+  }
+
+
 
   const drawerWidth = 240;
 
@@ -352,24 +362,7 @@ const handleGetId=(id)=>{
                       //Dynamic Row to data will come database
                     }
                     {
-                      allPatient.map(patient =>
-                        <tr>
-                          <td>{SlNo++}</td>
-                          <td>{patient.date}</td>
-                          <td>{patient.time}</td>
-                          <td>{patient.name}</td>
-                          <td>{patient.phoneNumber}</td>
-                          <td className="text-center">
-                            <button className="btn btn-primary action-btn-style">View</button>
-                          </td>
-                          <td>
-                            <select className="btn btn-info action-btn-style" onChange={handleAction}  name="" id="">
-                              <option className="bg-white text-secondary" onChange={handleGetId(patient._id)} value="Pending">Pending</option>
-                              <option className="bg-white text-secondary" onChange={handleGetId(patient._id)} value="Approved">Approved</option>
-                              <option className="bg-white text-secondary" onChange={handleGetId(patient._id)} value="Rejected">Rejected</option>
-                            </select>
-                          </td>
-                        </tr>)
+                      allPatient.map(patient => <RecentApointment patient={patient} key={patient._id} sl={SlNo++}></RecentApointment>)
                     }
                   </tbody>
                 </table>
@@ -406,16 +399,10 @@ const handleGetId=(id)=>{
                     </thead>
                     <tbody>
 
-                      <tr className="text-center">
-                        <td>Shakil Ahmed</td>
-                        <td>10-04-2020</td>
-                        <td className="text-center">
-                          <select className="btn btn-primary text-capitalize action-btn-style" name="" id="">
-                            <option className="bg-white text-secondary" value="Visited">Not Visited</option>
-                            <option className="bg-white text-secondary" value="">Visited</option>
-                          </select>
-                        </td>
-                      </tr>
+                      {
+                        patientByDate.map(patient => <PatientByDate id={patient._id} patient={patient}></PatientByDate>)
+                      }
+
                     </tbody>
                   </table>
 
@@ -462,15 +449,7 @@ const handleGetId=(id)=>{
                       //Dynamic Row to data will come database
                     }
                     {
-                      allPatient.map(patient => <tr className="row-bottom-style">
-                        <td>{SlNo2++}</td>
-                        <td>{patient.name}</td>
-                        <td>{patient.gender}</td>
-                        <td>{patient.age}</td>
-                        <td>{patient.weight}</td>
-                        <td>{patient.phoneNumber}</td>
-                        <td>{patient.email}</td>
-                      </tr>)
+                      allPatient.map(patient => <Patient patient={patient} key={patient._id} sl={SlNo2++}></Patient>)
                     }
                   </tbody>
                 </table>
@@ -516,16 +495,8 @@ const handleGetId=(id)=>{
                       //Dynamic Row to data will come database
                     }
                     {
-                      allPatient.map(patient => <tr>
-                        <td>{SlNo3++}</td>
-                        <td>{patient.date}</td>
-                        <td>{patient.time}</td>
-                        <td>{patient.name}</td>
-                        <td>{patient.phoneNumber}</td>
-                        <td className="text-center">
-                          <button className="btn btn-primary action-btn-style">View</button>
-                        </td>
-                      </tr>)
+                      allPatient.map(patient => <Prescription patient={patient} key={patient._id} sl={SlNo3++
+                      }></Prescription>)
                     }
                   </tbody>
                 </table>
