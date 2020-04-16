@@ -63,25 +63,17 @@ const Dashboard = () => {
 
   }, [])
 
-
   const handleCalender = date => {
     setCalenderDate(date);
-    let month = (calenderDate.toString()).split(" ")[1];
-    let day = (calenderDate.toString()).split(" ")[2];
-    let year = (calenderDate.toString()).split(" ")[3];
-
+    let month = (date.toString()).split(" ")[1];
+    let day = (date.toString()).split(" ")[2];
+    let year = (date.toString()).split(" ")[3];
 
     const patient = allPatient.filter(pat => pat.date === (month + "-" + day + "-" + year));
-    setPatientByDate([]);
     setPatientByDate(patient);
   }
 
 
-
-
-  const handleAction = (event) => {
-    console.log(event.target.value);
-  }
 
 
 
