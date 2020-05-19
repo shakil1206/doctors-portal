@@ -1,3 +1,14 @@
+
+## Doctors Portal (Full Stack):
+Patient appointment making system and Doctors report generator. A
+patient can make an appointment with a specific date. Doctors view
+report in dashboard. Doctors action create. Dynamic prescription
+generator.
+**Technology:** React, Redux, Material-UI, Bootstrap, Node.js, MongoDB
+**Tools:** VSCode, Git, Netlify, Firebase, Hiroku.
+**Live Link:** [Doctors Portal](https://doctorsportal-b406a.web.app/ "Doctors Portal")
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
