@@ -9,7 +9,7 @@ generator.<br/><br/>
 **Technology:** React, Redux, Material-UI, Bootstrap, Node.js, MongoDB<br/>
 **Tools:** VSCode, Git, Netlify, Firebase, Hiroku.<br/>
 **Live Link:** [Doctors Portal](https://doctorsportal-b406a.web.app/ "Doctors Portal")<br/>
-**BackEnd Link:** [Doctors Portal](https://github.com/shakil1206/doctorsPortal-Backend "Doctors Portal")<br/>
+**BackEnd Repo Link:** [Doctors Portal](https://github.com/shakil1206/doctorsPortal-Backend "Doctors Portal")<br/>
 
 
 ## How to use it?
