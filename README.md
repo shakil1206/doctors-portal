@@ -16,8 +16,6 @@ generator.<br/><br/>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-<br><br>
-
 At first clone this project. Then open your terminal and run--> `npm install` After installing you can now run --> `npm start` Then automatically run this project through your browser.
 
 Thank you.
